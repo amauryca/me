@@ -19,7 +19,7 @@ const App = () => {
   }
 
   // Use basename only for GitHub Pages production deployment
-  const basename = import.meta.env.PROD ? '/terminal-tales-showcase' : '';
+  const basename = import.meta.env.PROD ? '/me' : '';
 
   return (
     <QueryClientProvider client={queryClient}>
