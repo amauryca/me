@@ -61,6 +61,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				terminal: {
+					green: 'hsl(var(--terminal-green))',
+					'green-bright': 'hsl(var(--terminal-green-bright))',
+					'green-dim': 'hsl(var(--terminal-green-dim))',
+					black: 'hsl(var(--terminal-black))',
+					gray: 'hsl(var(--terminal-gray))'
 				}
 			},
 			borderRadius: {
@@ -84,11 +91,57 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'terminal-boot': {
+					'0%': { 
+						opacity: '0',
+						transform: 'scale(0.8) translateY(10px)'
+					},
+					'50%': {
+						opacity: '0.5',
+						transform: 'scale(0.95) translateY(5px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'scale(1) translateY(0)'
+					}
+				},
+				'matrix-rain': {
+					'0%': { transform: 'translateY(-100vh)' },
+					'100%': { transform: 'translateY(100vh)' }
+				},
+				'typewriter': {
+					'0%': { width: '0' },
+					'100%': { width: '100%' }
+				},
+				'glow-pulse': {
+					'0%, 100%': { 
+						'text-shadow': '0 0 5px hsl(120 100% 50% / 0.8)',
+						'box-shadow': '0 0 5px hsl(120 100% 50% / 0.3)'
+					},
+					'50%': { 
+						'text-shadow': '0 0 20px hsl(120 100% 50% / 1), 0 0 30px hsl(120 100% 50% / 0.8)',
+						'box-shadow': '0 0 20px hsl(120 100% 50% / 0.5)'
+					}
+				},
+				'scan-line': {
+					'0%': { transform: 'translateX(-100%)' },
+					'100%': { transform: 'translateX(100vw)' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0', transform: 'translateY(10px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'terminal-boot': 'terminal-boot 0.8s ease-out',
+				'matrix-rain': 'matrix-rain 3s linear infinite',
+				'typewriter': 'typewriter 2s steps(20) infinite alternate',
+				'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
+				'scan-line': 'scan-line 2s linear infinite',
+				'fade-in': 'fade-in 0.5s ease-out'
 			}
 		}
 	},
