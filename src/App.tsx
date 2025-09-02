@@ -9,8 +9,8 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => {
-  // Handle GitHub Pages SPA routing
-  if (typeof window !== 'undefined' && sessionStorage.redirect) {
+  // Handle GitHub Pages SPA routing only in production
+  if (typeof window !== 'undefined' && sessionStorage.redirect && import.meta.env.PROD) {
     const redirect = sessionStorage.redirect;
     delete sessionStorage.redirect;
     if (redirect !== location.href) {
@@ -18,13 +18,16 @@ const App = () => {
     }
   }
 
+  // Use basename only for GitHub Pages production deployment
+  const basename = import.meta.env.PROD ? '/terminal-tales-showcase' : '';
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <div className="dark">
           <Toaster />
           <Sonner />
-          <BrowserRouter basename="/terminal-tales-showcase">
+          <BrowserRouter basename={basename}>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="*" element={<NotFound />} />
