@@ -5,8 +5,9 @@ import PortfolioSection from "@/components/PortfolioSection";
 import SkillBar from "@/components/SkillBar";
 import ProjectCard from "@/components/ProjectCard";
 import TypewriterText from "@/components/TypewriterText";
+import InteractiveTerminal from "@/components/InteractiveTerminal";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, Award, Briefcase, GraduationCap, Heart, Github, Linkedin } from "lucide-react";
+import { Mail, Phone, Award, Briefcase, GraduationCap, Heart, Github, Linkedin, Terminal } from "lucide-react";
 
 const Index = () => {
   const skills = [
@@ -130,6 +131,15 @@ const Index = () => {
               Driven to always seek answers to problems • Strong attention to detail and time management
             </p>
           </div>
+        </PortfolioSection>
+
+        {/* Interactive Terminal Section */}
+        <PortfolioSection title="Interactive Terminal" delay={1200}>
+          <div className="mb-4 flex items-center gap-2 text-muted-foreground text-sm">
+            <Terminal className="w-4 h-4" />
+            <span>Try commands like: help, ls, cd projects, whoami, skills, contact</span>
+          </div>
+          <InteractiveTerminal />
         </PortfolioSection>
 
         {/* Projects Section */}
